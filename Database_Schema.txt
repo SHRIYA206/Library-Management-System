@@ -1,0 +1,20 @@
+use library_ms;
+select * from myusers;
+select * from book_details;
+select * from student_details;
+select * from issue_book_details;
+
+
+CREATE TABLE `myusers` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  `email` varchar(20) DEFAULT NULL,
+  `contact` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+create table book_details(book_id int PRIMARY key AUTO_INCREMENT not null,book_name varchar(250),author varchar(150),quantity int);
+create table student_details(student_id int primary key AUTO_INCREMENT not null,name varchar(100),course varchar(100),branch varchar(100));
+create table issue_book_details(id int PRIMARY KEY not null AUTO_INCREMENT,book_id int,book_name varchar(250),student_id int,student_name varchar(200),issue_date date,due_date date,status varchar(20));
+
+------------------------------------------------------------------------------------------------------------------
